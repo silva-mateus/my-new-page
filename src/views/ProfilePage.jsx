@@ -6,8 +6,6 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import profile from "../assets/img/mateus.png";
-
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import Button from "../Components/CustomButtons/Button";
@@ -16,7 +14,10 @@ import Parallax from "../Components/Parallax/Parallax";
 import GridContainer from "../Components/Grid/GridContainer.js";
 import GridItem from "../Components/Grid/GridItem.js";
 
+import profile from "../assets/img/mateus.png";
+
 import SectionWorks from "./Sections/SectionWorks";
+import SectionContact from "./Sections/SectionContact";
 
 import styles from "../Components/Styles/profilePageStyle.js";
 
@@ -30,7 +31,8 @@ export default function ProfilePage(props) {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
-  //const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+
+  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
   return (
     <div>
@@ -46,40 +48,69 @@ export default function ProfilePage(props) {
         {...rest}
       />
 
-      <Parallax small image={require("../assets/img/bg-img.jpg")}>
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div>
-            <div className={classes.container}>
-              <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={6}>
-                  <div className={classes.profile}>
-                    <div>
-                      <img src={profile} alt="..." className={imageClasses} />
-                    </div>
-                    <div className={classes.name}>
-                      <h3 className={classes.title}>Mateus Silva</h3>
-                      <h6>Desenvolvedor</h6>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-linkedin"} />
-                      </Button>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-instagram"} />
-                      </Button>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-facebook"} />
-                      </Button>
-                    </div>
+      <Parallax small image={require("../assets/img/bg-img.jpg")} />
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div>
+          <div className={classes.container}>
+            <GridContainer justify="center">
+              <GridItem xs={12} sm={12} md={6}>
+                <div className={classes.profile}>
+                  <div>
+                    <img src={profile} alt="..." className={imageClasses} />
                   </div>
-                </GridItem>
-              </GridContainer>
+                  <div className={classes.name}>
+                    <h3 className={classes.title}>Mateus Silva</h3>
+                    <h6>DESENVOLVEDOR</h6>
+                    <Button
+                      href="https://www.linkedin.com/in/mhassilvamat/"
+                      target="_blank"
+                      justIcon
+                      link
+                      className={classes.margin5}
+                    >
+                      <i className={"fab fa-linkedin"} />
+                    </Button>
+
+                    <Button
+                      href="https://www.facebook.com/ti.fisica.mateus"
+                      target="_blank"
+                      justIcon
+                      link
+                      className={classes.margin5}
+                    >
+                      <i className={"fab fa-facebook"} />
+                    </Button>
+
+                    <Button
+                      href="https://www.instagram.com/thihero/"
+                      target="_blank"
+                      justIcon
+                      link
+                      className={classes.margin5}
+                    >
+                      <i className={"fab fa-instagram"} />
+                    </Button>
+                  </div>
+                </div>
+              </GridItem>
+            </GridContainer>
+            <div className={classes.description}>
+              <p>
+                Sou um desenvolvedor de softwares, web designer. Formado em
+                Física, gosto muito de cosmologia, e também de ouvir/tocar
+                música. Sempre gostei também de "mexer" no computador e isso me
+                levou a gostar muito do que faço.
+              </p>
             </div>
+
+
+
+            <SectionWorks />
+            <SectionContact />
           </div>
         </div>
-      </Parallax>
-
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionWorks></SectionWorks>
       </div>
+
       <Footer />
     </div>
   );

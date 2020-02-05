@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "nodemon": "^2.0.2"
   },
   "homepage": "https://silva-mateus.github.io/my-new-page/"

@@ -35,7 +35,6 @@ export default function SectionContact(props) {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
-  const { ...rest } = props;
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -113,7 +112,7 @@ export default function SectionContact(props) {
                           />
                         </CardBody>
                         <CardFooter className={classes.cardFooter}>
-                          <Button simple color="blue" size="lg" type="submit">
+                          <Button color="blue" type="submit">
                             Enviar
                           </Button>
                         </CardFooter>

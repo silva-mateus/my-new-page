@@ -230,6 +230,11 @@ import {
           color: roseColor
         }
       },
+      "&$blue": {
+        "&,&:focus,&:hover,&:visited": {
+          color: blueColor
+        }
+      },
       "&$danger": {
         "&,&:focus,&:hover,&:visited": {
           color: dangerColor
